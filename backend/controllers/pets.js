@@ -35,7 +35,7 @@ module.exports = {
         })
     },
     edit: (req, res) =>{
-        Pets.findOneAndUpdate({_id: req.params.id}, req.body, (err, pet)=>{
+        Pets.findOneAndUpdate({_id: req.params.id}, req.body, {runValidators: true, context: 'query'}, (err, pet)=>{
             if(err){
                 res.json({message:"Error", error: err});
             } else{

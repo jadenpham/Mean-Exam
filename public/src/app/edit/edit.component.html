@@ -1,13 +1,16 @@
 <div>
     <h1>Edit this pet</h1>
     <form (submit)="edit_pet(this_id)">
-        <h3>Name: <input type="text" name="edit_name" value={{pet_data?.name}} [(ngModel)] = "pet_data.name"></h3>
-        <h3>Type: <input type="text" name="edit_type" value={{pet_data?.type}} [(ngModel)] = "pet_data.type"></h3>
-        <h3>Description: <input type="text" name="edit_description" value={{pet_data?.description}} [(ngModel)] = "pet_data.description"></h3>
+        <h3>Name: <input type="text" name="name" value={{pet_data?.name}} [(ngModel)] = "pet_data.name"></h3>
+        <p *ngIf ="err?.name">{{err.name.message}}</p>
+        <h3>Type: <input type="text" name="type" value={{pet_data?.type}} [(ngModel)] = "pet_data.type"></h3>
+        <p *ngIf ="err?.type">{{err.type.message}}</p>
+        <h3>Description: <input type="text" name="description" value={{pet_data?.description}} [(ngModel)] = "pet_data.description"></h3>
+        <p *ngIf ="err?.description">{{err.description.message}}</p>
         <h3>Skill 1: <input type="text" name="edit_skill1" value={{pet_data?.skill1}} [(ngModel)] = "pet_data.skill1"></h3>
         <h3>Skill 2: <input type="text" name="edit_skill2" value={{pet_data?.skill2}} [(ngModel)] = "pet_data.skill2"></h3>
         <h3>Skill 3: <input type="text" name="edit_skill1" value={{pet_data?.skill3}} [(ngModel)] = "pet_data.skill3"></h3>
         <input type="submit" value="Update pet">
-        <button [routerLink] = "['/pets']">Cancel</button>
+        <button [routerLink] = "['']">Cancel</button>
     </form>
 </div>
