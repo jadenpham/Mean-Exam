@@ -9,6 +9,7 @@ import { ActivatedRoute, Params, Router, Route } from '@angular/router';
 export class EditComponent implements OnInit {
   pet_data: any;
   this_id: any;
+  err: any;
 
   constructor(private _httpService: HttpService,
     private _route: ActivatedRoute,
@@ -26,9 +27,14 @@ export class EditComponent implements OnInit {
   }
   edit_pet(id){
     this._httpService.edit_pet(id, this.pet_data).subscribe(data =>{
-      this.pet_data = data;
+      if(data['pet']){
+        this.pet_data = data;
+        this._router.navigate([''])
+      } else{
+        this.err = data['error']['errors'];
+        console.log(this.err)
+      }  
       // console.log(this.pet_data, "this is the data")
-      this._router.navigate(['/pets'])
     })
   }
 

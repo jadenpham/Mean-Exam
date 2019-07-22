@@ -37,9 +37,9 @@ module.exports = {
     edit: (req, res) =>{
         Pets.findOneAndUpdate({_id: req.params.id}, req.body, (err, pet)=>{
             if(err){
-                res.json(err);
+                res.json({message:"Error", error: err});
             } else{
-                res.json(pet);
+                res.json({message:"Success", pet: pet});
             }
         })
     },

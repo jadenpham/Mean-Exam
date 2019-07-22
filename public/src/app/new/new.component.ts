@@ -23,7 +23,7 @@ export class NewComponent implements OnInit {
     this._httpService.create_pet(pet).subscribe(data =>{
       console.log("succesful");
       if(data['pet']){
-        this._route.navigate(['/pets']);
+        this._route.navigate(['']);
       } else{
         this.err = data['error']['errors'];
         console.log(data, "this is error json");

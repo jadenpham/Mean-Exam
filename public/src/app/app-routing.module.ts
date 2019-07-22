@@ -7,7 +7,7 @@ import { DetailsComponent } from './details/details.component';
 
 
 const routes: Routes = [
-  {path: "pets", component: PetsComponent},
+  {path: "", component: PetsComponent},
   {path: "pets/new", component: NewComponent},
   {path: "pets/:id", component: DetailsComponent},
   {path: "pets/edit/:id", component: EditComponent}

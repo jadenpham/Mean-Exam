@@ -28,7 +28,7 @@ export class DetailsComponent implements OnInit {
     console.log(id);
     this._httpService.delete(id).subscribe(data =>{
       console.log(data, "deleted succesful");
-      this._router.navigate(['/pets']);
+      this._router.navigate(['']);
     })
   }
 
