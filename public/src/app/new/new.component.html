@@ -1,0 +1,19 @@
+<div>
+    <form #Pet = 'ngForm' (submit)="create_pet(Pet?.value)">
+        <h2>Pet's details</h2>
+        <h3>Pet name: <input type="text" name="name" ngModel></h3>
+        <p *ngIf ="err?.name.message">{{err.name.message}}</p>
+        <h3>Pet type: <input type="text" name="type" ngModel></h3>
+        <p *ngIf ="err?.type.message">{{err.type.message}}</p>
+        <h3>Description: <input type="text" name="description" ngModel></h3>
+        <p *ngIf ="err?.description.message">{{err.description.message}}</p>
+        <div>
+            <h2>Skills: (optional)</h2>
+            <h3>Skill 1: <input type="text" name="skill1" ngModel></h3>
+            <h3>Skill 2: <input type="text" name="skill2" ngModel></h3>
+            <h3>Skill 3: <input type="text" name="skill3" ngModel></h3>
+        </div>
+        <input type="submit" value="Add pet">
+        <button [routerLink] = "['/pets']">Cancel</button>
+    </form>
+</div>

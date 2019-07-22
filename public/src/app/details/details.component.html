@@ -1,0 +1,11 @@
+<div>
+    <h1>Pet Shelter</h1>
+    <h2>Details about {{pet_data?.name}} </h2>
+    <h3>Pet type: {{pet_data?.type}}</h3>
+    <h3>Description: {{pet_data?.description}}</h3>
+    <h1>Skills: (optional)</h1>
+    <h3>Skill 1: {{pet_data?.skill1}}</h3>
+    <h3>Skill 2: {{pet_data?.skill2}}</h3>
+    <h3>Skill 2: {{pet_data?.skill3}}</h3>
+    <button (click) = "delete(pet_data._id)">Adopt this pet</button>
+</div>
